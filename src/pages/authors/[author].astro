@@ -1,0 +1,22 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+export function getStaticPaths() {
+  return [
+    {params: {author: 'clifford'}},
+    {params: {author: 'rover'}},
+    {params: {author: 'spot'}},
+  ];
+}
+
+const { author } = Astro.params;
+---
+
+<Layout title="Author blog">
+	<main>
+		<h1>I am an author: <span class="text-gradient">{author}</span></h1>
+		<p class="instructions">
+			Linking back to <a href="/">index</a>
+		</p>
+	</main>
+</Layout>
